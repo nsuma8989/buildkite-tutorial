@@ -1,3 +1,8 @@
+---
+env:
+  XDG_CACHE_HOME: "/mnt/ephemeral/caches"
+  ASPECT_WORKFLOWS_CONFIG: ".aspect/workflows/config.yaml"
+  
 steps:
 - label: ":ballot_box_with_ballot:"
   command: ./src/generate-and-store-number.sh
