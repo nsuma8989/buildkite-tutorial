@@ -22,6 +22,6 @@ steps:
 - label: ":pipeline:"
   command: buildkite-agent pipeline upload .buildkite/pipeline.ask-to-continue.yml
 
-- command: "echo tests.sh"
-  label: "Test %n"
+- command: buildkite-agent pipeline upload .buildkite/template.yml
+  label: "upload parallel steps"
   parallelism: 5
