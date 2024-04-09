@@ -20,9 +20,8 @@ steps:
       value: "strawberry"
 
 - label: ":pipeline:"
-  command: ./src/generate-steps-from-stored-number.sh | buildkite-agent pipeline upload
+  command: buildkite-agent pipeline upload .buildkite/pipeline.ask-to-continue.yml
 
-- wait
-
-- label: ":desktop_computer:"
-  command: ./src/fetch-and-display-number.sh collect
+- command: "echo tests.sh"
+  label: "Test %n"
+  parallelism: 5
