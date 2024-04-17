@@ -5,7 +5,7 @@ set -eu
 : "${BUILDKITE_API_TOKEN_CREATE_PIPELINES:?required API token with write_pipelines} scope}"
 : "${BUILDKITE_API_TOKEN_CREATE_BUILDS:?required API token with write_builds} scope}"
 
-# allow specification of org when using `bk local run`
+# allow specification of org when using the `bk local run`
 BUILDKITE_ORG_SLUG=${BUILDKITE_ORG_SLUG:-$BUILDKITE_ORGANIZATION_SLUG}
 BUILDKITE_REPO_X=${BUILDKITE_REPO_X:-$BUILDKITE_REPO}
 
