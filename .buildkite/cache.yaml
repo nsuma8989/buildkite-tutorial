@@ -9,5 +9,8 @@ cache:
   backend: s3
   restore-keys:
   - v1-cache-{{ id }}-{{ git.commit }}
+
 steps:
   - command: echo "test"
+  - plugins:
+    - detect-clowns#v2.0.0: ~
