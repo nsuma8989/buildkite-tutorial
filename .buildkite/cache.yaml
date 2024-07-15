@@ -1,0 +1,13 @@
+---
+cache:
+  id: icfse
+  s3:
+    bucket: deepmatter-buildkite-cache-production
+  key: v1-cache-{{ id }}-{{ git.commit }}
+  paths:
+  - "."
+  backend: s3
+  restore-keys:
+  - v1-cache-{{ id }}-{{ git.commit }}
+steps:
+  - command: echo "test"
