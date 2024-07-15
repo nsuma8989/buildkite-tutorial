@@ -11,6 +11,7 @@ cache:
   - v1-cache-{{ id }}-{{ git.commit }}
 
 steps:
-  - command: echo "test"
-  - plugins:
+
+- command: echo "test"
+- plugins:
     - detect-clowns#v2.0.0: ~
