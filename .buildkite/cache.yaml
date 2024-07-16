@@ -2,7 +2,7 @@
 cache:
   id: icfse
   s3:
-    bucket: deepmatter-buildkite-cache-production
+    bucket: test
   key: v1-cache-{{ id }}-{{ git.commit }}
   paths:
   - "."
