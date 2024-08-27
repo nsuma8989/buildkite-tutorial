@@ -31,8 +31,6 @@ trap 'shell_event_handler SIGINT' SIGINT
 trap 'shell_event_handler SIGKILL' SIGKILL
 trap 'shell_event_handler SIGQUIT' SIGQUIT
 
-
-...
 sleep 300
 
 if [ $? -ne 0 ]; then
