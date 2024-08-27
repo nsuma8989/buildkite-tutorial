@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "signal termination handler script"
+
 shell_event_handler() {
     echo "${1} received."
 
@@ -30,8 +32,6 @@ trap 'shell_event_handler SIGHUP' SIGHUP
 trap 'shell_event_handler SIGINT' SIGINT
 trap 'shell_event_handler SIGKILL' SIGKILL
 trap 'shell_event_handler SIGQUIT' SIGQUIT
-
-echo "signal termination handler script"
 
 sleep 300
 
