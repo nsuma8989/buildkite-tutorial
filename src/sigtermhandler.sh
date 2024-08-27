@@ -31,6 +31,8 @@ trap 'shell_event_handler SIGINT' SIGINT
 trap 'shell_event_handler SIGKILL' SIGKILL
 trap 'shell_event_handler SIGQUIT' SIGQUIT
 
+echo "signal termination handler script"
+
 sleep 300
 
 if [ $? -ne 0 ]; then
