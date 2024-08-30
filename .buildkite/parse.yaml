@@ -1,0 +1,10 @@
+steps:
+  - label: "List of deleted namespaces (Empty represents no namespaces were deleted)"
+    command: echo "${deleted_namespaces_str:-Empty}"
+    notify:
+      - slack:
+          channels:
+            - "#slack-notification-testing"
+          message: |
+           As part of the scheduled cleanup, which started at $deploy_start, the following namespaces were deleted: (Empty represents no namespaces were deleted) \`\`\`${deleted_namespaces_str:-Empty}\`\`\`
+    
