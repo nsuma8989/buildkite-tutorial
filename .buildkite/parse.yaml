@@ -1,6 +1,6 @@
 steps:
   - label: "List of deleted namespaces (Empty represents no namespaces were deleted)"
-    command: echo "[2024-08-30T16:15:48Z] NS to delete: first [2024-08-30T16:15:48Z] second"
+    command: echo "[2024-08-30T16:15:48Z] NS to delete first [2024-08-30T16:15:48Z] second"
     notify:
       - slack:
           channels:
