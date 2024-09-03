@@ -1,5 +1,6 @@
 steps:
   - label: "Build and Push Preview Environment Docker Image :docker:"
+    command: echo "test"
     plugins:
       - seek-oss/docker-ecr-publish#v2.4.0:
           dockerfile: kintent-sharedinfra/ecr/preview-environment-docker/Dockerfile
