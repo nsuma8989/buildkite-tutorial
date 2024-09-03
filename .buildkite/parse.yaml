@@ -1,9 +1,15 @@
 steps:
-  - label: "List of deleted namespaces (Empty represents no namespaces were deleted)"
-    command: echo "[2024-08-30T16:15:48Z] NS to delete first		[2024-08-30T16:15:48Z] second"
-    notify:
-      - slack:
-          channels:
-            - "#slack-notification-testing"
-          message: |
-           As part of the scheduled cleanup, which started at $deploy_start, the following namespaces were deleted: (Empty represents no namespaces were deleted) [2024-08-30T16:15:48Z] NS to delete first [2024-08-30T16:15:48Z] second
+  - label: "Build and Push Preview Environment Docker Image :docker:"
+    plugins:
+      - seek-oss/docker-ecr-publish#v2.4.0:
+          dockerfile: kintent-sharedinfra/ecr/preview-environment-docker/Dockerfile
+          add-latest-tag: false
+          ecr-name: kintent/preview-environment
+          tags: "${BUILDKITE_COMMIT:0:7}"
+     notify:
+       - slack:
+           channels:
+             - "#preview-environment-updates"
+           message: |
+             Preview Environment Docker Image \`${BUILDKITE_COMMIT:0:7}\` is updated \`\`\`${BUILDKITE_COMMIT:0:7} ${BUILDKITE_MESSAGE}\`\`\`
+             Deployed by ${BUILDKITE_BUILD_CREATOR} at $deploy_start
