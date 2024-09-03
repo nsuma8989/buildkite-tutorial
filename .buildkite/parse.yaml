@@ -12,4 +12,3 @@ steps:
              - "#preview-environment-updates"
            message: |
              Preview Environment Docker Image \`${BUILDKITE_COMMIT:0:7}\` is updated \`\`\`${BUILDKITE_COMMIT:0:7} ${BUILDKITE_MESSAGE}\`\`\`
-             Deployed by ${BUILDKITE_BUILD_CREATOR} at $deploy_start
