@@ -3,7 +3,6 @@ steps:
     command: echo "test"
     plugins:
       - seek-oss/docker-ecr-publish#v2.4.0:
-          dockerfile: kintent-sharedinfra/ecr/preview-environment-docker/Dockerfile
           add-latest-tag: false
           ecr-name: kintent/preview-environment
           tags: "${BUILDKITE_COMMIT:0:7}"
