@@ -1,16 +1,16 @@
 steps:
-  - label: "Build and Push Preview Environment Docker Image :docker:"
-    command: echo "test"
-    plugins:
-      - seek-oss/docker-ecr-publish#v2.4.0:
-          add-latest-tag: false
-          ecr-name: kintent/preview-environment
-          tags: "${BUILDKITE_COMMIT:0:7}"
-     notify:
-       - slack:
-           channels:
-             - "#preview-environment-updates"
-           message: |
-             Preview Environment Docker Image \`${BUILDKITE_COMMIT:0:7}\` is
-             updated \`\`\`${BUILDKITE_COMMIT:0:7} 
-             ${BUILDKITE_MESSAGE}\`\`\`
+- label: "Build and Push Preview Environment Docker Image :docker:"
+  command: echo "test"
+  plugins:
+    - seek-oss/docker-ecr-publish#v2.4.0:
+        add-latest-tag: false
+        ecr-name: kintent/preview-environment
+        tags: "${BUILDKITE_COMMIT:0:7}"
+  notify:
+    - slack:
+        channels:
+          - "#preview-environment-updates"
+        message: |
+          Preview Environment Docker Image \`${BUILDKITE_COMMIT:0:7}\` is
+          updated \`\`\`${BUILDKITE_COMMIT:0:7} 
+          ${BUILDKITE_MESSAGE}\`\`\`
