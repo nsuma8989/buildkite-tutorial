@@ -11,7 +11,7 @@ steps:
 - label: "Build and Push Preview Environment Docker Image :docker:"
   plugins:
   - seek-oss/docker-ecr-publish#v2.4.0:
-      dockerfile: kintent-sharedinfra/ecr/preview-environment-docker/Dockerfile
+      dockerfile: kintent-sharedinfra/ecr/preview-environment-docker/Dockerfil
       add-latest-tag: false
       ecr-name: kintent/preview-environment
       tags: "${BUILDKITE_COMMIT:0:7}"
