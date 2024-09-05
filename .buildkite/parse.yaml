@@ -2,7 +2,7 @@ steps:
   - label: "Test Teletraan"
     command: |
       ls -al /pinci
-      if ls -al /pinci | awk $$1 == "-r-xr-xr-x" && $$9 == "publish_to_teletraan.py" {exit 0} END {exit 1}; then  
+      if [ ls -al /pinci | awk $$1 == "-r-xr-xr-x" && $$9 == "publish_to_teletraan.py" {exit 0} END {exit 1} ]; then  
           echo "Permissions and file name are correct."  
       else  
           echo "Permissions or file name are incorrect."  
