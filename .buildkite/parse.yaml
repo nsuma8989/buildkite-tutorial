@@ -64,5 +64,5 @@ steps:
           pull-retries: 5
   - label: "Test Artifactory-Push"
     command: |
-      echo Buildkite Publish >> buildkite.md
+      echo 'Buildkite Publish' >> buildkite.md
       artifactory-push generic --src=buildkite.md --target=test/buildkite.md
