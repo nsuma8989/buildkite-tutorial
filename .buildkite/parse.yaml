@@ -1,16 +1,68 @@
 steps:
-- label: "Build and Push Preview Environment Docker Image :docker:"
-  plugins:
-    - seek-oss/docker-ecr-publish#v2.4.0:
-        dockerfile: kintent-sharedinfra/ecr/preview-environment-docker/Dockerfil
-        add-latest-tag: false
-        ecr-name: kintent/preview-environment
-        tags: "${BUILDKITE_COMMIT:0:7}"
-  notify:
-    - slack:
-        channels:
-          - "#preview-environment-updates"
-        message: |
-          Preview Environment Docker Image \`${BUILDKITE_COMMIT:0:7}\` is
-          updated \`\`\`${BUILDKITE_COMMIT:0:7} 
-          ${BUILDKITE_MESSAGE}\`\`\`
+  - label: "Test Teletraan"
+    command: |
+      ls -al /pinci
+      if ls -al /pinci | awk '$$1 == "-r-xr-xr-x" && $$9 == "publish_to_teletraan.py" {exit 0} END {exit 1}'; then  
+          echo "Permissions and file name are correct."  
+      else  
+          echo "Permissions or file name are incorrect."  
+          exit 1  
+      fi 
+  - label: "Test gh CLI"
+    command: |
+      gh login
+      if [ "$(gh api user --jq '.login')" = "github-harold_pins" ]; then
+        echo "GitHub user login matches 'github-harold_pins'."
+      else
+        echo "GitHub user login does not match 'github-harold_pins'."
+        exit 1
+      fi
+  - label: "Test AWS CLI"
+    command:
+      - "aws --version"
+  - label: "Test Git Profile"
+    command: |
+      echo 'Hello World' >> README.md
+      git checkout -b test-local-git-profile
+      git add README.md
+      git commit -m '[Test] Local Git Profile'
+      if [ "$(git log -1 --pretty=%B)" = "[Test] Local Git Profile" ]; then
+        echo "HEAD commit message matches '[Test] Local Git Profile'."
+      else
+        echo "HEAD commit message does not match '[Test] Local Git Profile'."
+        exit 1
+      fi
+  - label: "Test Merge Product"
+    command: |
+      if git rev-parse --symbolic-full-name HEAD | grep -qE '^refs/heads/pull/[0-9]+/merge$'; then
+        echo "Current ref matches the pattern."
+      else
+        echo "Current ref does not match the pattern."
+        exit 1
+      fi
+    env:
+      - use_merge_product: true
+  - label: "Test Custom Checkout Path"
+    command: |
+      if [ "$$BUILDKITE_BUILD_CHECKOUT_PATH" = "$(pwd)" ]; then
+        echo "BUILDKITE_BUILD_CHECKOUT_PATH matches the current working directory."
+      else
+        echo "BUILDKITE_BUILD_CHECKOUT_PATH does not match the current working directory."
+        exit 1
+      fi
+    env:
+      - BUILDKITE_BUILD_CHECKOUT_PATH: "/tmp/buildkite-checkout"
+  - label: "Test Docker-Compose Plugins"
+    command: "ls -al"
+    plugins:
+      - docker-compose#v4.11.0:
+          build: buildkite_agent_metrics
+          cache-from:
+            - buildkite_agent_metrics:998131032990.dkr.ecr.us-east-1.amazonaws.com/buildkite-agent-metrics:latest
+          config: services/buildkite_agent_metrics/docker-compose.yml
+          image-repository: 998131032990.dkr.ecr.us-east-1.amazonaws.com/buildkite-agent-metrics
+          pull-retries: 5
+  - label: "Test Artifactory-Push"
+    command: |
+      echo 'Buildkite Publish' >> buildkite.md
+      artifactory-push generic --src=buildkite.md --target=test/buildkite.md
