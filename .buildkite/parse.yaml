@@ -25,7 +25,7 @@ steps:
       echo 'Hello World' >> README.md
       git checkout -b test-local-git-profile
       git add README.md
-      git commit -m '[Test] Local Git Profile'
+      git commit -m "[Test] Local Git Profile"
       if [ "$(git log -1 --pretty=%B)" = "[Test] Local Git Profile" ]; then
         echo "HEAD commit message matches '[Test] Local Git Profile'."
       else
@@ -64,5 +64,5 @@ steps:
           pull-retries: 5
   - label: "Test Artifactory-Push"
     command: |
-      echo "Buildkite Publish" >> buildkite.md
+      echo 'Buildkite Publish' >> buildkite.md
       artifactory-push generic --src=buildkite.md --target=test/buildkite.md
