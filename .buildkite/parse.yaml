@@ -34,7 +34,7 @@ steps:
       fi
   - label: "Test Merge Product"
     command: |
-      if [ git rev-parse --symbolic-full-name HEAD | grep -qE '^refs/heads/pull/[0-9]+/merge$' ]; then
+      if git rev-parse --symbolic-full-name HEAD | grep -qE '^refs/heads/pull/[0-9]+/merge$'; then
         echo "Current ref matches the pattern."
       else
         echo "Current ref does not match the pattern."
