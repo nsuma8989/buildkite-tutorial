@@ -1,20 +1,6 @@
 agents:
-  queue: kubernetes
+  queue: local
 steps:
-- name: android-build
-  commands:
-  - cd rt/public_api/examples/android/remote_control
-  - ./gradlew clean
-  - ./gradlew assembleRelease --exclude-task lint -PjenkinsBuild=true
-  plugins:
-  - kubernetes:
-      podSpecPatch:
-        containers:
-        - name: container-0
-          resources:
-            requests:
-              cpu: 100m
-              memory: 100Mi
-            limits:
-              memory: 100Mi
-              cpu: 100m
+  - trigger: export-data
+    depends_on:
+      - "docker"
