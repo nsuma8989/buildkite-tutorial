@@ -8,11 +8,12 @@ TARGET_SIZE=$((1024 * 1024))  # 1 MB in bytes
 > "$LOGFILE"
 
 # Loop until the file size is greater than 1MB
-while [ $(stat -c%s "$LOGFILE") -le $TARGET_SIZE ]
+while [ $(stat -f%z "$LOGFILE") -le $TARGET_SIZE ]
 do
   # Append random data to the log file
   echo "$(date) - Random log entry: $RANDOM" >> "$LOGFILE"
 done
 
 # Output the size of the generated log file
-echo "Generated log file size: $(stat -c%s "$LOGFILE") bytes"
+echo "Generated log file size: $(stat -f%z "$LOGFILE") bytes"
+
