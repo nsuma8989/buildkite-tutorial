@@ -1,25 +1,27 @@
 #!/bin/bash
 
-set -euo pipefail
+# Define or retrieve the comma-separated list of services dynamically
+# You can replace this with a dynamic source, e.g., an environment variable
+SERVICES="service-a,service-b,service-c"
 
-# Capture the start time for Slack notification
+# Split the SERVICES variable into an array
+IFS=',' read -r -a service_array <<< "$SERVICES"
 
-export deploy_start=$(date)
+# Start the pipeline YAML with the matrix setup
+echo "steps:" > pipeline.yml
+echo "  - label: \"Run Tests with each service\"" >> pipeline.yml
+echo "    command: \"echo Running tests for \$SERVICE\"" >> pipeline.yml
+echo "    matrix:" >> pipeline.yml
+echo "      setup:" >> pipeline.yml
+echo "        service:" >> pipeline.yml
 
-cat <<- YAML | buildkite-agent pipeline upload
-steps:
-- label: "Build and Push Preview Environment Docker Image :docker:"
-  plugins:
-  - seek-oss/docker-ecr-publish#v2.4.0:
-      dockerfile: kintent-sharedinfra/ecr/preview-environment-docker/Dockerfil
-      add-latest-tag: false
-      ecr-name: kintent/preview-environment
-      tags: "${BUILDKITE_COMMIT:0:7}"
-  notify:
-  - slack:
-      channels:
-        - "#preview-environment-updates"
-      message: |
-        Preview Environment Docker Image \`${BUILDKITE_COMMIT:0:7}\` is updated \`\`\`${BUILDKITE_COMMIT:0:7} ${BUILDKITE_MESSAGE}\`\`\`
-        Deployed by ${BUILDKITE_BUILD_CREATOR} at $deploy_start
-YAML
+# Add each service as a separate entry in the matrix
+for service in "${service_array[@]}"; do
+  echo "          - \"$service\"" >> pipeline.yml
+done
+
+# Set the environment variable to reference the matrix value
+echo "    env:" >> pipeline.yml
+echo "      SERVICE: \"{{matrix.setup.service}}\"" >> pipeline.yml
+# Upload the dynamically generated pipeline to Buildkite
+buildkite-agent pipeline upload pipeline.yml
