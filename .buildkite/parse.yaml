@@ -13,4 +13,3 @@ steps:
       
   - label: "echo service_name"
     command: "echo ${SERVICE_NAME}"
-    depends_on: "env"
