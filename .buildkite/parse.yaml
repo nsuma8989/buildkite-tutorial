@@ -9,5 +9,9 @@ steps:
   - label: "Service Name"
     command:
       - SERVICE_NAME=$(buildkite-agent meta-data get service-name)
+    depends_on: "service-name"
+    key: "env"
+      
   - label: "echo service_name"
     command: "echo ${SERVICE_NAME}"
+    depends_on: "env"
