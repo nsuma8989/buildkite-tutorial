@@ -8,7 +8,7 @@ steps:
 
   - label: "Service Name"
     command:
-      - SERVICE_NAME=$(buildkite-agent meta-data get service-name)
+      - SERVICE_NAME=$(buildkite-agent meta-data get "service-name")
     key: "env"
       
   - label: "echo service_name"
