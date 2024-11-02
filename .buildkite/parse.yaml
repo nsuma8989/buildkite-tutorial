@@ -1,5 +1,13 @@
 agents:
    queue: local
 steps:
+  - input: "service name"
+    fields:
+      - text: "What is the service name?"
+        key: "service-name"
+
+  - label: "Service Name"
+    command:
+      - SERVICE_NAME=$(buildkite-agent meta-data get service-name)
   - label: "echo service_name"
     command: "echo ${SERVICE_NAME}"
