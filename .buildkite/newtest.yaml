@@ -1,6 +1,2 @@
-agents:
-  queue: local
 steps:
-  - trigger: export-data
-    depends_on:
-      - "docker"
+  - command: buildkite-agent pipeline upload .buildkite/template.yml
