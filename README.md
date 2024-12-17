@@ -12,7 +12,7 @@ Initially you do not need to fork this repo.
 
 No fields need to be changed at this time. Scroll to the bottom to create the new pipeline.
 
-We can skip the next page "GitHub Webhook Setup" for the moment. Scroll to the bottom and click "Continue to Pipeline".
+We can skip the next page "GitHub Webhook Setup" for the moment. Scroll to the bottom and click "Continue to Pipeline"
 
 Now click "New Build" in the top right. Enter an arbitrary message. It can include [Buildkite Emoji](https://github.com/buildkite/emojis), such as "Learning to :pipeline: is fun."
 
