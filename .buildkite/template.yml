@@ -1,6 +1,6 @@
-name: "Buildkite Tutorial by Stark & Wayne"
-description: |
-  Learning to :pipeline: is fun.
 steps:
-- label: ":pipeline:"
-  command: buildkite-agent pipeline upload .buildkite/pipeline.show-environment.yml
+  - command: echo test
+    plugins:
+      - artifacts#v1.9.4:
+          download: "log/file.log"
+          compressed: playwright-$$${BUILDKITE_BUILD_NUMBER}-shard_4-try_$$${BUILDKITE_RETRY_COUNT}.zip
