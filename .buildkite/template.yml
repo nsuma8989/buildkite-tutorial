@@ -3,4 +3,4 @@ steps:
     plugins:
       - artifacts#v1.9.4:
           download: "log/file.log"
-          compressed: playwright-$${BUILDKITE_BUILD_NUMBER}-shard_4-try_$${BUILDKITE_RETRY_COUNT}.zip
+          compressed: playwright-$$BUILDKITE_BUILD_NUMBER-shard_4-try_$$BUILDKITE_RETRY_COUNT.zip
