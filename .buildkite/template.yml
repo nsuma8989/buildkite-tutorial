@@ -1,6 +1,9 @@
+env:
+  # Scenario set versions to use in scorecard reporting.
+  DEFAULT_CONSTANT_V: 5
+  DEFAULT_SIDE_V: 11
+  # These versions can be optionally overridden.
+  SIDE_V: "${SIDE_V:-$DEFAULT_SIDE_V}"
+  CONSTANT_V: "${CONSTANT_V:-$DEFAULT_CONSTANT_V}"
 steps:
-  - command: echo test
-    plugins:
-      - artifacts#v1.9.4:
-          download: "log/file.log"
-          compressed: playwright-$$${BUILDKITE_BUILD_NUMBER}-shard_4-try_$$${BUILDKITE_RETRY_COUNT}.zip
+  - command: echo "test"
