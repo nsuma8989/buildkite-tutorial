@@ -1,0 +1,4 @@
+steps:
+- key: e2e-help-center
+  label: ":playwright: Trigger e2e help-center"
+  trigger: testk8splugin
