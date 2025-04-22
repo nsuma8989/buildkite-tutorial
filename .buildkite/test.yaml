@@ -1,0 +1,5 @@
+steps:
+- command: buildkite-agent pipeline upload .buildkite/trigger1.yaml
+- command: buildkite-agent pipeline upload .buildkite/trigger2.yaml
+- command: buildkite-agent pipeline upload .buildkite/trigger3.yaml
+- command: buildkite-agent pipeline upload .buildkite/trigger4.yaml
