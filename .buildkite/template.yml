@@ -30,7 +30,11 @@ steps:
     - exit_status: 127
     - exit_status: 134
     - exit_status: 254
-  command: buildkite-agent pipeline upload .buildkite/test.yaml
+  commands: 
+  - buildkite-agent pipeline upload .buildkite/trigger1.yaml
+  - buildkite-agent pipeline upload .buildkite/trigger2.yaml
+  - buildkite-agent pipeline upload .buildkite/trigger3.yaml
+  - buildkite-agent pipeline upload .buildkite/trigger4.yaml
   timeout_in_minutes: 10
 - if: build.pull_request.labels includes "create-sandbox"
   env:
