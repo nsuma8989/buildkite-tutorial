@@ -5,3 +5,6 @@ steps:
       BUILDKITE_PULL_REQUEST: '185059'
   label: ":playwright: Trigger e2e admin"
   trigger: testk8splugin
+  depends_on:
+  - sql-dump
+  - fsl-wait
