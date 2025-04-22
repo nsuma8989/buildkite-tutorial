@@ -1,0 +1,4 @@
+steps:
+- key: e2e-retailer
+  label: ":playwright: Trigger e2e retailer"
+  trigger: testk8splugin
