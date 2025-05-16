@@ -2,6 +2,3 @@ steps:
 - key: e2e-admin
   label: ":playwright: Trigger e2e admin"
   trigger: export-data
-  depends_on:
-  - sql-dump
-  - fsl-wait
