@@ -1,0 +1,27 @@
+---
+steps:
+- key: approval_step_A
+  input: Request Approval
+  fields:
+  - key: approval-decision-A
+    select: Decision
+    options:
+    - label: "✅ Approve"
+      value: approved
+    - label: "❌ Reject"
+      value: rejected
+    required: true
+- label: ":wheel: Approval check for A"
+  command: "./deploy-scripts/checkApproval.sh A"
+  depends_on: approval_step_A
+- label: ":rocket: Deploy to B"
+  command: buildkite-agent pipeline upload .buildkite/deployb.yml
+- label: ":rocket: Deploy to C"
+  command: "./deploy-scripts/deploy.sh C"
+- label: ":rocket: Deploy to D"
+  command: buildkite-agent pipeline upload .buildkite/deployd.yml
+- label: ":rocket: Deploy to dev"
+  command: "./deploy-scripts/deploy.sh dev"
+- label: ":rocket: Deploy to test"
+  command: "./deploy-scripts/deploy.sh test"
+"+++ :book": Reading environment configuration
