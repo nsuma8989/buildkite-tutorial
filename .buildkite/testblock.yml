@@ -1,0 +1,38 @@
+
+---
+steps:
+- block: Fill out the details for this pipeline run
+  fields:
+  - key: APP_NAME
+    hint: Desired name of the app to deploy.
+    text: APP_NAME
+    required: true
+  - key: DEPLOY_VERSION
+    hint: 'Desired version to deploy, format: vX.Y.Z'
+    text: DEPLOY_VERSION
+    required: false
+  - key: TARGET_DEPLOY_ENV
+    hint: Desired environment to deploy
+    select: TARGET_DEPLOY_ENV
+    options:
+    - label: dev
+      value: dev
+    - label: test
+      value: test
+    - label: prod-A
+      value: A
+    - label: prod-B
+      value: B
+    - label: prod-C
+      value: C
+    - label: prod-D
+      value: D
+    multiple: true
+    required: false
+  - key: PREVIEW
+    select: PREVIEW
+    options:
+    - label: 'yes'
+      value: 'yes'
+    required: false
+- command: buildkite-agent pipeline upload .buildkite/block.yml
