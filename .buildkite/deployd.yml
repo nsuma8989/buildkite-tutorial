@@ -1,0 +1,19 @@
+steps:
+- key: group
+  group: ":lock_with_ink_pen: Grouped Actions"
+  steps:
+  - label: ":brakeman: Brakeman"
+    command: echo "Brakeman"
+  - label: ":bundle: Bundle Audit"
+    command: echo "Bundle Audit"
+  - label: ":yarn: Yarn Audit"
+    command: echo "Yarn Audit"
+  - label: ":yarn: Outdated Check"
+    command: echo "Outdated Check"
+- group: Group Actions after Validations
+  steps:
+  - label: action 1 after Validation
+    command: echo "HI"
+  - label: action 2 after Validation
+    command: echo "HI2"
+  depends_on: validations
