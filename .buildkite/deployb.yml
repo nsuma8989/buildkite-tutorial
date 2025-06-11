@@ -1,0 +1,15 @@
+steps:
+- key: validations
+  group: ":lock_with_ink_pen: Validation Actions Group"
+  steps:
+  - key: validation-check
+    label: Validation check
+    command: "./deploy-scripts/validation_tests.sh"
+  - label: Run regression only if validation check is passed
+    command: |
+      if [ $(buildkite-agent step get "outcome" --step "validation-check") == "passed" ]; then
+        buildkite-agent step update "label" "Run Regression"
+        ./deploy-scripts/regression_tests.sh
+      fi
+    depends_on: validation-check
+    cancel_on_build_failing: true
