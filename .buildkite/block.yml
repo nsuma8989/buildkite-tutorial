@@ -2,7 +2,6 @@
 steps:
 - key: approval_step_A
   input: Request Approval
-  depends_on: exit
   fields:
   - key: approval-decision-A
     select: Decision
