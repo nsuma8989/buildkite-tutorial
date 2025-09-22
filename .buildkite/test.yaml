@@ -1,2 +1,4 @@
 steps:
-- command: buildkite-agent pipeline upload .buildkite/trigger1.yaml
+  - group: "Setup"
+    steps:
+      - command: "docker build"
