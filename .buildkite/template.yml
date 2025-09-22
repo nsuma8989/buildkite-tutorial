@@ -1,54 +1,5 @@
----
 steps:
-- env:
-    AUTO_AWS_ROLE_TYPE: repo
-  key: sql-dump
-  label: ":pickup_truck: Generate and upload sandbox SQL dump"
-  retry:
-    automatic:
-    - exit_status: -1
-    - exit_status: 2
-    - exit_status: 94
-    - exit_status: 99
-    - exit_status: 128
-    - exit_status: 127
-    - exit_status: 134
-    - exit_status: 254
-  command: echo "test"
-  timeout_in_minutes: 10
-- env:
-    AUTO_AWS_ROLE_TYPE: repo
-  key: fsl-wait
-  label: ":camera_with_flash: Wait for FSL snapshot and maybe upload E2E trigger steps"
-  retry:
-    automatic:
-    - exit_status: -1
-    - exit_status: 2
-    - exit_status: 94
-    - exit_status: 99
-    - exit_status: 128
-    - exit_status: 127
-    - exit_status: 134
-    - exit_status: 254
-  command: ./src/test.sh
-  timeout_in_minutes: 10
-- if: build.pull_request.labels includes "create-sandbox"
-  env:
-    AUTO_AWS_ROLE_TYPE: repo
-  label: ":beach_with_umbrella: Create sandbox"
-  retry:
-    automatic:
-    - exit_status: -1
-    - exit_status: 2
-    - exit_status: 94
-    - exit_status: 99
-    - exit_status: 128
-    - exit_status: 127
-    - exit_status: 134
-    - exit_status: 254
-  command: echo "create sandbox"
-  depends_on:
-  - sql-dump
-  - fsl-wait
-  timeout_in_minutes: 10
+  - group: "Setup"
+    steps:
+      - command: echo "group step"
 
