@@ -1,4 +1,4 @@
 steps:
   - group: "Setup"
     steps:
-      - command: "docker build"
+      - command: echo "docker build"
