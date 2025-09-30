@@ -1,2 +1,6 @@
 steps:
-  - command: echo $$BAZEL_CACHE_CONFIG
+- key: click-here-if-no-tests-should-be-run-
+  block: Click here if no tests should be run.
+  prompt: If no tests should be run with this build, click 'Continue'.
+  blocked_state: failed
+  allow_dependency_failure: false
