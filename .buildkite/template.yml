@@ -1,5 +1,3 @@
 steps:
-  - group: "Setup"
-    steps:
-      - command: echo "group step"
+  - command: echo $$BAZEL_CACHE_CONFIG
 
