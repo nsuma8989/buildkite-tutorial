@@ -1,4 +1,2 @@
 steps:
-  - group: "Setup"
-    steps:
-      - command: echo "docker build"
+  - command: echo $$BAZEL_CACHE_CONFIG
