@@ -1,3 +1,6 @@
-steps:
-  - command: echo $$BAZEL_CACHE_CONFIG
+steps:   
+  - label: "Check and Report Test Results"
+    command:  echo "this should show and test results" 
+    allow_dependency_failure: true
+    depends_on: group-test-key
 
