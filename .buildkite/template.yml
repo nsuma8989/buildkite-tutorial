@@ -1,6 +1,6 @@
 steps:   
   - label: "Check and Report Test Results"
-    command:  echo "this should show and test result" 
+    command:  echo "this should show and test results" 
     depends_on: 
     - step: group-test-key
       allow_failure: true
