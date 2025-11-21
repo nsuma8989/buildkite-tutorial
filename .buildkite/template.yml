@@ -1,7 +1,7 @@
-steps:   
-  - label: "Check and Report Test Results"
-    command:  echo "this should show and test results" 
-    depends_on: 
-    - step: group-test-key
-      allow_failure: true
-    allow_dependency_failure: true
+steps:
+  - label: "🐳 Build and push with Kaniko"
+    env:
+      PACKAGE_REGISTRY_NAME: "test"
+    commands:
+      - bash .buildkite/steps/kaniko.sh
+
