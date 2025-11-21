@@ -3,5 +3,5 @@ steps:
     env:
       PACKAGE_REGISTRY_NAME: "test"
     commands:
-      - bash src/kaniko.sh
+      - bash ./src/test.sh
 
