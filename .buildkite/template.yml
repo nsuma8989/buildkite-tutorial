@@ -1,7 +1,7 @@
 steps:
   - label: "🐳 Build and push with Kaniko"
     env:
-      PACKAGE_REGISTRY_NAME: "test"
+      PACKAGE_REGISTRY_NAME: "mydockerreg"
     commands:
       - bash ./src/test.sh
 
