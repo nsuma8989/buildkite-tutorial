@@ -1,7 +1,17 @@
-steps:   
-  - group: "tests"
-    key: group-test-key
-    steps:
-      - label: "trigger build"
-        trigger: pipe-1
-        key: trigger-step-key 
+- label: ":bazel: :bar_chart: p2_zip/exec Coverage"
+    if_changed: "p2_zip/exec/**"
+    depends_on:
+      - bazel-test
+    command: |
+      echo "./buildkite/ci/bin/p2_exec_coverage.sh"
+    retry: *auto_retry_params
+    artifact_paths:
+      - coverage_report/**/*
+      - coverage_summary.txt
+    env: *env_params
+    plugins:
+      - docker#v5.12.0:
+          <<: *docker_params
+          mount-buildkite-agent: true
+          environment:
+            - "GH_TOKEN"
