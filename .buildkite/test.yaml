@@ -5,11 +5,9 @@ steps:
       - bazel-test
     command: |
       echo "./buildkite/ci/bin/p2_exec_coverage.sh"
-    retry: *auto_retry_params
     artifact_paths:
       - coverage_report/**/*
       - coverage_summary.txt
-    env: *env_params
     plugins:
       - docker#v5.12.0:
           <<: *docker_params
