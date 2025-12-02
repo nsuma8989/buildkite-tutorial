@@ -1,4 +1,5 @@
-- label: ":bazel: :bar_chart: p2_zip/exec Coverage"
+steps:
+  - label: ":bazel: :bar_chart: p2_zip/exec Coverage"
     if_changed: "p2_zip/exec/**"
     depends_on:
       - bazel-test
