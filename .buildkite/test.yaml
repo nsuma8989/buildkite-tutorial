@@ -10,7 +10,6 @@ steps:
       - coverage_summary.txt
     plugins:
       - docker#v5.12.0:
-          <<: *docker_params
           mount-buildkite-agent: true
           environment:
             - "GH_TOKEN"
