@@ -7,13 +7,13 @@ steps:
     label: ":node::hammer_and_wrench: Platform NPM Tooling :: Node Tests"
     command: echo "test"
     branches:
-    - " !gh-readonly-queue/*"
+    - "!gh-readonly-queue/*"
     depends_on: []
   - key: root-build
     label: ":node::hammer_and_wrench: Platform NPM Tooling :: Node Build/Bundle"
     command: echo "test"
     branches:
-    - " !gh-readonly-queue/*"
+    - "!gh-readonly-queue/*"
     depends_on:
     - root-test
     artifact_paths: "./dist/*"
@@ -21,7 +21,7 @@ steps:
     label: ":node::package: Platform NPM Tooling :: Publish"
     command: echo "test"
     branches:
-    - " !gh-readonly-queue/*"
+    - "!gh-readonly-queue/*"
     depends_on:
     - root-build
   depends_on: []
