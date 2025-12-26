@@ -1,15 +1,27 @@
+---
 steps:
-  - label: ":bazel: :bar_chart: p2_zip/exec Coverage"
-    if_changed: "p2_zip/exec/**"
+- key: npm-tooling-build
+  group: ":node::hammer_and_wrench: Platform NPM Tooling Build"
+  steps:
+  - key: root-test
+    label: ":node::hammer_and_wrench: Platform NPM Tooling :: Node Tests"
+    command: echo "test"
+    branches:
+    - " !gh-readonly-queue/*"
+    depends_on: []
+  - key: root-build
+    label: ":node::hammer_and_wrench: Platform NPM Tooling :: Node Build/Bundle"
+    command: echo "test"
+    branches:
+    - " !gh-readonly-queue/*"
     depends_on:
-      - bazel-test
-    command: |
-      echo "./buildkite/ci/bin/p2_exec_coverage.sh"
-    artifact_paths:
-      - coverage_report/**/*
-      - coverage_summary.txt
-    plugins:
-      - docker#v5.12.0:
-          mount-buildkite-agent: true
-          environment:
-            - "GH_TOKEN"
+    - root-test
+    artifact_paths: "./dist/*"
+  - key: root-publish
+    label: ":node::package: Platform NPM Tooling :: Publish"
+    command: echo "test"
+    branches:
+    - " !gh-readonly-queue/*"
+    depends_on:
+    - root-build
+  depends_on: []
