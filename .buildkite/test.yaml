@@ -5,7 +5,7 @@ steps:
   command: ''
   plugins:
   - github.com/buildkite-plugins/docker-buildkite-plugin#v5.11.0:
-      image: t.amazonaws.com/nexus-gradle8:latest
+      image: nexus-gradle8:latest
       command:
       - gradle
       - "-p/home/gradle/."
