@@ -1,6 +1,6 @@
 ---
 steps:
-- key: example-project-kt-build
+- key: example-project-kt-build-test
   label: ":gradle::hammer_and_wrench: Example Project :: Gradle Build"
   command: ''
   plugins:
@@ -41,7 +41,7 @@ steps:
     branches:
     - "!gh-readonly-queue"
     artifact_paths: app/*-metadata.json
-  depends_on: example-project-kt-build
+  depends_on: example-project-kt-build-test
 - key: example-project-kt-app-argo
   group: ":argo: Example Project/app :: Deploy via Argo"
   steps:
