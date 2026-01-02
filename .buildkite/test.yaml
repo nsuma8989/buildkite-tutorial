@@ -1,38 +1,5 @@
 ---
 steps:
-- key: example-project-kt-build-test
-  label: ":gradle::hammer_and_wrench: Example Project :: Gradle Build"
-  command: ''
-  plugins:
-  - github.com/buildkite-plugins/docker-buildkite-plugin#v5.11.0:
-      image: gradle:latest
-      command:
-      - gradle
-      - "-p/home/gradle/."
-      - build
-      - shadowJar
-      - "--info"
-      - "-Prelease=false"
-      - "-Pcurative.publishing.channel=snapshot"
-      volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock"
-      workdir: "/home/gradle"
-      expand-volume-vars: true
-      propagate-environment: true
-- key: example-project-kt-package
-  group: ":hammer_and_wrench: Example Project :: Package Artifacts"
-  steps:
-  - key: example-project-kt-app-packaging
-    label: ":docker::hammer_and_wrench: Example Project/app :: Docker Packaging"
-    command: echo "test"
-    plugins:
-    - github.com/buildkite-plugins/artifacts-buildkite-plugin#v1.9.3:
-        download:
-        - app/build/libs/app-shadow.jar
-    branches:
-    - "!gh-readonly-queue"
-    artifact_paths: app/*-metadata.json
-  depends_on: example-project-kt-build-test
 - key: example-project-kt-app-argo
   group: ":argo: Example Project/app :: Deploy via Argo"
   steps:
@@ -54,6 +21,4 @@ steps:
         propagate-environment: true
     artifact_paths:
     - "./argo/**.generated.manifest"
-  depends_on:
-  - example-project-kt-package
 
