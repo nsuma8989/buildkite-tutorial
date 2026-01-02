@@ -9,7 +9,7 @@ steps:
     plugins:
     - github.com/buildkite-plugins/docker-buildkite-plugin#v5.11.0:
         image: argoproj/argocd:v2.6.15
-        command:
+        command: echo "test"
         volumes: []
         workdir: "/app"
         environment:
