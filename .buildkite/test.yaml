@@ -4,12 +4,6 @@ steps:
   label: ":gradle::hammer_and_wrench: Example Project :: Gradle Build"
   command: ''
   plugins:
-  - github.com/curative/vault-secrets-buildkite-plugin#0.3.0:
-      tag: vault-1.13.1
-      auth:
-        path: aws/shared
-      image: t.amazonaws.com/curative-external-deps
-      address: https://vault.infra.curative.com
   - github.com/buildkite-plugins/docker-buildkite-plugin#v5.11.0:
       image: t.amazonaws.com/nexus-gradle8:latest
       command:
@@ -30,10 +24,7 @@ steps:
   steps:
   - key: example-project-kt-app-packaging
     label: ":docker::hammer_and_wrench: Example Project/app :: Docker Packaging"
-    command: |-
-      docker build --progress=plain --metadata-file app/example-project-kt-app-metadata.json -f app/Dockerfile --label commit=45211aa00a49a427f22ff52f68873259f750ab38 --label branch=cicd-integration  app --tag 502948648058.dkr.ecr.us-west-2.amazonaws.com/exemplar-service-kt:branch-cicd-integration
-      docker push 502948648058.dkr.ecr.us-west-2.amazonaws.com/exemplar-service-kt:branch-cicd-integration
-      buildkite-agent meta-data set 'packaging/docker/example-project-kt-app' branch-cicd-integration
+    command: echo "test"
     plugins:
     - github.com/buildkite-plugins/artifacts-buildkite-plugin#v1.9.3:
         download:
@@ -47,20 +38,8 @@ steps:
   steps:
   - key: example-project-kt-app-argo-deploy
     label: ":argo: :: Example Project/app"
-    command: argocd app get example-service-kt-staging;if [ "$?" != "0" ]; then  argocd
-      app create example-service-kt-staging -f ./argo/example-service-kt/example-service-kt-staging.generated.manifest
-      --grpc-web;else argocd app sync example-service-kt-staging --local ./argo/example-service-kt
-      --grpc-web;fi;argocd app wait example-service-kt-staging --grpc-web --health
-      --timeout 300
+    command: echo "test"
     plugins:
-    - github.com/curative/vault-secrets-buildkite-plugin#0.3.0:
-        env:
-          ARGOCD_AUTH_TOKEN: secrets/infra/argocd/buildkite/auth_token
-        tag: vault-1.13.1
-        auth:
-          path: aws/shared
-        image: 502948648058.dkr.ecr.us-west-2.amazonaws.com/curative-external-deps
-        address: https://vault.infra.curative.com
     - github.com/buildkite-plugins/docker-buildkite-plugin#v5.11.0:
         image: argoproj/argocd:v2.6.15
         command:
@@ -73,12 +52,6 @@ steps:
         - AWS_SECRET_ACCESS_KEY=None
         expand-volume-vars: true
         propagate-environment: true
-    - github.com/cultureamp/aws-assume-role-buildkite-plugin#v0.2.0:
-        role: arn:aws:iam::743814775676:role/CurativeBuildSystemCrossAccount
-    - github.com/curative/curative-build-system-buildkite-plugin#b7a71a7:
-        debug: true
-        plugin: argo
-        command: generate-manifests example-project-kt app
     artifact_paths:
     - "./argo/**.generated.manifest"
   depends_on:
