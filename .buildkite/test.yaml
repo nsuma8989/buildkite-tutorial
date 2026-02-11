@@ -3,5 +3,6 @@ steps:
   command: "sleep 5m"
   concurrency: 1
   concurrency_group: 
-  - "production/agents-console-ui/canary"
+    - production/agents-console-ui/canary
+    - euprod/agents-console-ui/canary
 
