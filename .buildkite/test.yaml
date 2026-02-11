@@ -2,6 +2,5 @@ steps:
 - label: ":hourglass_flowing_sand: Wait for Canary"
   command: "sleep 5m"
   concurrency: 1
-  concurrency_group:
-  - "production/agents-console-ui/canary"
+  concurrency_group: "production/agents-console-ui/canary"
 
