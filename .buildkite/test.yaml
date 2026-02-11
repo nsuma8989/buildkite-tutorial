@@ -1,24 +1,8 @@
----
 steps:
-- key: example-project-kt-app-argo
-  group: ":argo: Example Project/app :: Deploy via Argo"
-  steps:
-  - key: example-project-kt-app-argo-deploy
-    label: ":argo: :: Example Project/app"
-    command: echo "test"
-    plugins:
-    - github.com/buildkite-plugins/docker-buildkite-plugin#v5.11.0:
-        image: "argoproj/argocd:v2.6.15"
-        command: ''
-        volumes: []
-        workdir: "/app"
-        environment:
-        - ARGOCD_SERVER=argocd.infra.curative.com
-        - ARGOCD_AUTH_TOKEN=None
-        - AWS_ACCESS_KEY_ID=None
-        - AWS_SECRET_ACCESS_KEY=None
-        expand-volume-vars: true
-        propagate-environment: true
-    artifact_paths:
-    - "./argo/**.generated.manifest"
+- label: ":hourglass_flowing_sand: Wait for Canary"
+  command: "sleep 5m"
+  concurrency: 1
+  concurrency_group:
+  - "production/agents-console-ui/canary"
+  - "euprod/agents-console-ui/canary"
 
