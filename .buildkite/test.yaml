@@ -4,5 +4,4 @@ steps:
   concurrency: 1
   concurrency_group:
   - "production/agents-console-ui/canary"
-  - "euprod/agents-console-ui/canary"
 
