@@ -17,7 +17,7 @@ steps:
 - label: ":rocket: Deploy to B"
   command: buildkite-agent pipeline upload .buildkite/deployb.yml
 - label: ":rocket: Deploy to C"
-  command: echo "./deploy-scripts/deploy.sh C"
+  command: echo "./deploy-scripts/deploy.sh C "
 - label: ":rocket: Deploy to D"
   command: buildkite-agent pipeline upload .buildkite/deployd.yml
 - label: ":rocket: Deploy to dev"
