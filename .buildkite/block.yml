@@ -24,4 +24,4 @@ steps:
   command: exit 1
 - label: ":rocket: Deploy to test "
   command: echo "./deploy-scripts/deploy.sh test"
-"+++ :book": Reading environment configuration
+"+++ :book": Reading environment configurations
