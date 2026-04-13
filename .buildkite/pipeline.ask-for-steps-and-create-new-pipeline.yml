@@ -5,7 +5,7 @@ steps:
   fields:
   - text: "How many steps to create?"
     key: "steps-count"
-    hint: "Think of any number. But a positive number. And not too large, please."
+    hint: "Think of any number. But a positive number. And not too large, please. "
   - text: "Pipeline name?"
     key: "pipeline-name"
     hint: "Name for Buildkite Pipeline to be created"
