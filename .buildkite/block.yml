@@ -12,7 +12,7 @@ steps:
       value: rejected
     required: true
 - label: ":wheel: Approval check for A"
-  command: echo "./deploy-scripts/checkApproval.sh A"
+  command: echo "./deploy-scripts/checkApproval.sh A "
   depends_on: approval_step_A
 - label: ":rocket: Deploy to B"
   command: buildkite-agent pipeline upload .buildkite/deployb.yml
