@@ -20,7 +20,7 @@ steps:
   command: echo "./deploy-scripts/deploy.sh C "
 - label: ":rocket: Deploy to D"
   command: buildkite-agent pipeline upload .buildkite/deployd.yml
-- label: ":rocket: Deploy to dev"
+- label: ":rocket: Deploy to dev "
   command: exit 1
 - label: ":rocket: Deploy to test"
   command: echo "./deploy-scripts/deploy.sh test"
