@@ -1,6 +1,6 @@
 steps:
 - block: ":inbox_tray:"
-  prompt: "Give me information, and I will give you a new Pipeline."
+  prompt: "Give me information, and I will give you a new Pipeline ."
   key: "user-data"
   fields:
   - text: "How many steps to create?"
