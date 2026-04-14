@@ -6,7 +6,7 @@ steps:
   - key: approval-decision-A
     select: Decision
     options:
-    - label: "✅ Approve"
+    - label: "✅ Approve "
       value: approved
     - label: "❌ Reject"
       value: rejected
