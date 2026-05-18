@@ -1,0 +1,2542 @@
+steps:
+  - env:
+      ACTION: "buildforsize-Lyft"
+      FLAVOR: "Alpha"
+    label: "Alpha/buildforsize-Lyft"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-BostonApp"
+      FLAVOR: "Alpha"
+    label: "Alpha/buildforsize-BostonApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-ChicagoApp"
+      FLAVOR: "Alpha"
+    label: "Alpha/buildforsize-ChicagoApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-NewYorkCityApp"
+      FLAVOR: "Alpha"
+    label: "Alpha/buildforsize-NewYorkCityApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-PortlandApp"
+      FLAVOR: "Alpha"
+    label: "Alpha/buildforsize-PortlandApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-SanFranciscoApp"
+      FLAVOR: "Alpha"
+    label: "Alpha/buildforsize-SanFranciscoApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-WashingtonDCApp"
+      FLAVOR: "Alpha"
+    label: "Alpha/buildforsize-WashingtonDCApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-AustinApp"
+      FLAVOR: "Alpha"
+    label: "Alpha/buildforsize-AustinApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-BilbaoApp"
+      FLAVOR: "Alpha"
+    label: "Alpha/buildforsize-BilbaoApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-FortWorthApp"
+      FLAVOR: "Alpha"
+    label: "Alpha/buildforsize-FortWorthApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-MexicoCityApp"
+      FLAVOR: "Alpha"
+    label: "Alpha/buildforsize-MexicoCityApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-MiamiApp"
+      FLAVOR: "Alpha"
+    label: "Alpha/buildforsize-MiamiApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-MontrealApp"
+      FLAVOR: "Alpha"
+    label: "Alpha/buildforsize-MontrealApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-RivasApp"
+      FLAVOR: "Alpha"
+    label: "Alpha/buildforsize-RivasApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-TorontoApp"
+      FLAVOR: "Alpha"
+    label: "Alpha/buildforsize-TorontoApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-ZaragozaApp"
+      FLAVOR: "Alpha"
+    label: "Alpha/buildforsize-ZaragozaApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-LondonApp"
+      FLAVOR: "Alpha"
+    label: "Alpha/buildforsize-LondonApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-Driver"
+      FLAVOR: "Beta"
+    label: "Beta/buildforsize-Driver"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-Lyft"
+      FLAVOR: "Beta"
+    label: "Beta/buildforsize-Lyft"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-BostonApp"
+      FLAVOR: "Beta"
+    label: "Beta/buildforsize-BostonApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-ChicagoApp"
+      FLAVOR: "Beta"
+    label: "Beta/buildforsize-ChicagoApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-NewYorkCityApp"
+      FLAVOR: "Beta"
+    label: "Beta/buildforsize-NewYorkCityApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-PortlandApp"
+      FLAVOR: "Beta"
+    label: "Beta/buildforsize-PortlandApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-SanFranciscoApp"
+      FLAVOR: "Beta"
+    label: "Beta/buildforsize-SanFranciscoApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-WashingtonDCApp"
+      FLAVOR: "Beta"
+    label: "Beta/buildforsize-WashingtonDCApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-AustinApp"
+      FLAVOR: "Beta"
+    label: "Beta/buildforsize-AustinApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-BilbaoApp"
+      FLAVOR: "Beta"
+    label: "Beta/buildforsize-BilbaoApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-FortWorthApp"
+      FLAVOR: "Beta"
+    label: "Beta/buildforsize-FortWorthApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-MexicoCityApp"
+      FLAVOR: "Beta"
+    label: "Beta/buildforsize-MexicoCityApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-MiamiApp"
+      FLAVOR: "Beta"
+    label: "Beta/buildforsize-MiamiApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-MontrealApp"
+      FLAVOR: "Beta"
+    label: "Beta/buildforsize-MontrealApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-PBSNApp"
+      FLAVOR: "Beta"
+    label: "Beta/buildforsize-PBSNApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-RivasApp"
+      FLAVOR: "Beta"
+    label: "Beta/buildforsize-RivasApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-TorontoApp"
+      FLAVOR: "Beta"
+    label: "Beta/buildforsize-TorontoApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-ZaragozaApp"
+      FLAVOR: "Beta"
+    label: "Beta/buildforsize-ZaragozaApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-LondonApp"
+      FLAVOR: "Beta"
+    label: "Beta/buildforsize-LondonApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-Driver"
+      FLAVOR: "Labs"
+    label: "Labs/buildforsize-Driver"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-Lyft"
+      FLAVOR: "Labs"
+    label: "Labs/buildforsize-Lyft"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-Driver"
+      FLAVOR: "QA"
+    label: "QA/buildforsize-Driver"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 30
+  - env:
+      ACTION: "buildforsize-Lyft"
+      FLAVOR: "QA"
+    label: "QA/buildforsize-Lyft"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 30
+  - env:
+      ACTION: "buildforsize-BostonApp"
+      FLAVOR: "QA"
+    label: "QA/buildforsize-BostonApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 30
+  - env:
+      ACTION: "buildforsize-ChicagoApp"
+      FLAVOR: "QA"
+    label: "QA/buildforsize-ChicagoApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 30
+  - env:
+      ACTION: "buildforsize-NewYorkCityApp"
+      FLAVOR: "QA"
+    label: "QA/buildforsize-NewYorkCityApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 30
+  - env:
+      ACTION: "buildforsize-PortlandApp"
+      FLAVOR: "QA"
+    label: "QA/buildforsize-PortlandApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 30
+  - env:
+      ACTION: "buildforsize-SanFranciscoApp"
+      FLAVOR: "QA"
+    label: "QA/buildforsize-SanFranciscoApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 30
+  - env:
+      ACTION: "buildforsize-WashingtonDCApp"
+      FLAVOR: "QA"
+    label: "QA/buildforsize-WashingtonDCApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 30
+  - env:
+      ACTION: "buildforsize-AustinApp"
+      FLAVOR: "QA"
+    label: "QA/buildforsize-AustinApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 30
+  - env:
+      ACTION: "buildforsize-BilbaoApp"
+      FLAVOR: "QA"
+    label: "QA/buildforsize-BilbaoApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 30
+  - env:
+      ACTION: "buildforsize-FortWorthApp"
+      FLAVOR: "QA"
+    label: "QA/buildforsize-FortWorthApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 30
+  - env:
+      ACTION: "buildforsize-MexicoCityApp"
+      FLAVOR: "QA"
+    label: "QA/buildforsize-MexicoCityApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 30
+  - env:
+      ACTION: "buildforsize-MiamiApp"
+      FLAVOR: "QA"
+    label: "QA/buildforsize-MiamiApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 30
+  - env:
+      ACTION: "buildforsize-MontrealApp"
+      FLAVOR: "QA"
+    label: "QA/buildforsize-MontrealApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 30
+  - env:
+      ACTION: "buildforsize-PBSNApp"
+      FLAVOR: "QA"
+    label: "QA/buildforsize-PBSNApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 30
+  - env:
+      ACTION: "buildforsize-PolarisDemoApp"
+      FLAVOR: "QA"
+    label: "QA/buildforsize-PolarisDemoApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 30
+  - env:
+      ACTION: "buildforsize-RivasApp"
+      FLAVOR: "QA"
+    label: "QA/buildforsize-RivasApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 30
+  - env:
+      ACTION: "buildforsize-TorontoApp"
+      FLAVOR: "QA"
+    label: "QA/buildforsize-TorontoApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 30
+  - env:
+      ACTION: "buildforsize-ZaragozaApp"
+      FLAVOR: "QA"
+    label: "QA/buildforsize-ZaragozaApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 30
+  - env:
+      ACTION: "buildforsize-LondonApp"
+      FLAVOR: "QA"
+    label: "QA/buildforsize-LondonApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 30
+  - env:
+      ACTION: "buildforsize-Driver"
+      FLAVOR: "Release"
+    label: "Release/buildforsize-Driver"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-Lyft"
+      FLAVOR: "Release"
+    label: "Release/buildforsize-Lyft"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-BostonApp"
+      FLAVOR: "Release"
+    label: "Release/buildforsize-BostonApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-ChicagoApp"
+      FLAVOR: "Release"
+    label: "Release/buildforsize-ChicagoApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-NewYorkCityApp"
+      FLAVOR: "Release"
+    label: "Release/buildforsize-NewYorkCityApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-PortlandApp"
+      FLAVOR: "Release"
+    label: "Release/buildforsize-PortlandApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-SanFranciscoApp"
+      FLAVOR: "Release"
+    label: "Release/buildforsize-SanFranciscoApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-WashingtonDCApp"
+      FLAVOR: "Release"
+    label: "Release/buildforsize-WashingtonDCApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-AustinApp"
+      FLAVOR: "Release"
+    label: "Release/buildforsize-AustinApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-BilbaoApp"
+      FLAVOR: "Release"
+    label: "Release/buildforsize-BilbaoApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-FortWorthApp"
+      FLAVOR: "Release"
+    label: "Release/buildforsize-FortWorthApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-MexicoCityApp"
+      FLAVOR: "Release"
+    label: "Release/buildforsize-MexicoCityApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-MiamiApp"
+      FLAVOR: "Release"
+    label: "Release/buildforsize-MiamiApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-MontrealApp"
+      FLAVOR: "Release"
+    label: "Release/buildforsize-MontrealApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-PolarisDemoApp"
+      FLAVOR: "Release"
+    label: "Release/buildforsize-PolarisDemoApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-RivasApp"
+      FLAVOR: "Release"
+    label: "Release/buildforsize-RivasApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-TorontoApp"
+      FLAVOR: "Release"
+    label: "Release/buildforsize-TorontoApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-ZaragozaApp"
+      FLAVOR: "Release"
+    label: "Release/buildforsize-ZaragozaApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
+  - env:
+      ACTION: "buildforsize-LondonApp"
+      FLAVOR: "Release"
+    label: "Release/buildforsize-LondonApp"
+    retry:
+      manual:
+        permit_on_passed: true
+      automatic:
+      - limit: 3
+        exit_status: -1
+      - limit: 3
+        exit_status: 42
+      - limit: 3
+        exit_status: 137
+      - limit: 3
+        exit_status: 143
+      - limit: 3
+        exit_status: 160
+      - limit: 3
+        exit_status: 255
+    agents:
+      queue: "mobile"
+      tools-version: "23"
+      xcode-version: "26.4.1.17E202"
+    notify:
+    - "github_check"
+    command: "./tools/ci/run.sh"
+    priority: 0
+    soft_fail:
+    - exit_status: 165
+    depends_on: []
+    artifact_paths: "artifacts/**/*"
+    timeout_in_minutes: 75
